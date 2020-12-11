@@ -31,9 +31,29 @@ Enter the webcam image into channel 0 of the main buffer
 **//:0ab,1bb,0b,0va,1v**  
        0ab       0=>channnel number, ab -> copy buffer from a to b  
        1bb       1=>channnel number, bb -> copy buffer b to b  
-        0b       put buffer b to channnel 0 of base layer  
-        0v       put webcam texture to channnel 0 of base layer  
-        1v       put webcam texture to channnel 1 of base layer  
+        0b       input buffer b to channnel 0 of base layer  
+        0v       input webcam texture to channnel 0 of base layer  
+        1v       input webcam texture to channnel 1 of base layer  
+
+**header for "Sirenian Dawn https://www.shadertoy.com/view/XsyGWV"**
+"Sirenian Dawn" uses A, B, C, and Image(main)Buffer.
+And also uses internal noise texture.
+Header is as follows,
+
+//M:0gMa,1rLa,0ab,1bb,0bc,1cc
+
+0gMa  ->  input middle size gray noise texture　to A buffer thru 0 channnel
+1rLa  ->  input large size rgb noise texture to A buffer thru 1 channel
+
+gL gray Large noise texture
+gM gray Middle noise texture
+gS gray Small  noise texture
+g,<noize texture filename>
+
+rL rgb Large noise texture
+rM rgb Middle noise texture
+rS rgb Small  noise texture
+r,<noize texture filename>
 
 
-  
+
