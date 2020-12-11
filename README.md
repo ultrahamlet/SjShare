@@ -15,9 +15,11 @@ Insert code such as "uv.y = -uv.y" to fix it.
 I think most of the code on "ShaderToy.com" works,  
 Some features are not supported.  
 This version does not support the face landmarks function or the function that becomes a virtual camera for ZOOM.  
-Also, in this version, only 9 shaders are assigned to the keys, but in the pro version, 100 or more can be assigned.  
-Sample of multipath shader:  
-//:0v          
+Also, in this version, only 9 shaders are assigned to the keys, but in the pro version, 100 or more can be assigned. 
+
+**Sample of multipath shader**    
+
+//:0v  
 0 => channel number, v => webcam  
 Enter the webcam image into channel 0 of the main buffer  
  //:0ab,1bb,0b,0va,1v  
