@@ -42,18 +42,18 @@ Header is as follows,
 
 //M:0gMa,1rLa,0ab,1bb,0bc,1cc
 
-0gMa  ->  input middle size gray noise texture　to A buffer thru 0 channnel
-1rLa  ->  input large size rgb noise texture to A buffer thru 1 channel
+0gMa  ->  input middle size gray noise texture　to A buffer thru 0 channnel  
+1rLa  ->  input large size rgb noise texture to A buffer thru 1 channel  
 
-gL gray Large noise texture
-gM gray Middle noise texture
-gS gray Small  noise texture
-g,<noize texture size>
+gL gray Large noise texture  
+gM gray Middle noise texture  
+gS gray Small  noise texture  
+g,<noize texture size>  
 
-rL rgb Large noise texture
-rM rgb Middle noise texture
-rS rgb Small  noise texture
-r,<noize texture size>
+rL rgb Large noise texture  
+rM rgb Middle noise texture  
+rS rgb Small  noise texture  
+r,<noize texture size>  
 
 
 
