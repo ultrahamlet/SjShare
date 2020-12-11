@@ -17,12 +17,18 @@ Some features are not supported.
 This version does not support the face landmarks function or the function that becomes a virtual camera for ZOOM.  
 Also, in this version, only 9 shaders are assigned to the keys, but in the pro version, 100 or more can be assigned. 
 
-**Sample of multipath shader**    
 
-//:0v  
+You can change the dimensions of the display window with "MySettings.exe".  
+The Spacebar toggles the export of frame-by-frame images to the "data/export" folder.
+
+
+**Sample of multipath shader description**    
+
+**//:0v**  
 0 => channel number, v => webcam  
 Enter the webcam image into channel 0 of the main buffer  
- //:0ab,1bb,0b,0va,1v  
+
+**//:0ab,1bb,0b,0va,1v**  
        0ab       0=>channnel number, ab -> copy buffer from a to b  
        1bb       1=>channnel number, bb -> copy buffer b to b  
         0b       put buffer b to channnel 0 of base layer  
