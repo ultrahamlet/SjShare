@@ -8,7 +8,7 @@ Test effects are assigned to 0 to 9 of the keys on the keyboard.
 Press a key 0-9 to change shader.  
 Each shader can be changed by replacing the code of the shader file under the "data/shaderes" folder.  
 Shader coding is similar to ShaderToy except for the first line.  
-The field to the left of the ":" is the mouse or sound switch, and the field to the right is the multipath shader description.  
+The field to the left of the ":" is the mouse or sounds switch, and the field to the right is the multipath shader description.  
 If you don't use multipath shaders, mouse or sounds, just start the line "//" and the shadertoy.com code will work.
 However, the screen may turn upside down, in which case  
 Insert code such as "uv.y = -uv.y" to fix it.  
