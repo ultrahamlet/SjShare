@@ -48,12 +48,12 @@ Header is as follows,
 gL gray Large noise texture
 gM gray Middle noise texture
 gS gray Small  noise texture
-g,<noize texture filename>
+g,<noize texture size>
 
 rL rgb Large noise texture
 rM rgb Middle noise texture
 rS rgb Small  noise texture
-r,<noize texture filename>
+r,<noize texture size>
 
 
 
