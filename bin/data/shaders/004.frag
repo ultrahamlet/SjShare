@@ -1,4 +1,18 @@
 //:0ab,1bb,0b,0va,1v
+
+#define DEBUG_MODE 1
+
+
+float isDebug()
+{
+    return .0;
+}
+
+
+float lotsOfRed()
+{
+    return 1.0;
+}
 vec3 fireGrad(float x)
 {
     vec3 a = vec3(0.0,0.0,0.0);
@@ -12,6 +26,8 @@ vec3 fireGrad(float x)
     
     return col;
 }
+
+
 
 
 // procedural noise from IQ
@@ -92,10 +108,10 @@ vec4 shapeToFlame(vec2 uv, float n, float c )
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
 	vec2 uv = fragCoord.xy / iResolution.xy;
-   // uv.y = 1.0 - uv.y;
     //vec3 origColor = vec3( texture(iChannel0, uv));
-    float strength = floor(uv.x-1);
-	float T3 = max(3.,1.25*strength)*iTime*0.6;
+    float strength = floor(uv.x+1.);
+	float T3 = max(3.,1.25*strength)*iTime;
+
     float n= fbm( uv * strength *5. - vec2(0,T3) );
     
     float flameShape = vec3( texture(iChannel0, uv)).r;
@@ -103,20 +119,20 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     float maxVal = 1.5;
     flameShape = clamp(flameShape, 0.,maxVal);
     
-    //if ( isDebug()> .5 )
-    //{
-    //    if ( uv.x > 0.9 )
-    //        flameShape = ( 1.-uv.y) * maxVal;
-    //}
+    if ( isDebug()> .5 )
+    {
+        if ( uv.x > 0.9 )
+            flameShape = ( 1.-uv.y) * maxVal;
+    }
     
     flameShape = pow(flameShape/maxVal, 0.8)*maxVal;
     
     
-    //if ( isDebug()> .5 )
-    //{
-    //    if ( uv.x > 0.8 && uv.x < 0.9 )
-    //        flameShape = ( 1.-uv.y) * maxVal;
-    //}    
+    if ( isDebug()> .5 )
+    {
+        if ( uv.x > 0.8 && uv.x < 0.9 )
+            flameShape = ( 1.-uv.y) * maxVal;
+    }    
     vec4 colFire = shapeToFlame( uv, n, flameShape );
     
     
@@ -133,12 +149,14 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     
 	//if ( uv.x > 0.9 )
       //  col = vec3(1.-uv.y);
+
+
     
     //col = vec3(n);
     //col = vec3(flameShape);
     
     // for test :
-  //  col = vec3( texture(iChannel2, uv));
+    //col = vec3( texture(iChannel2, uv));
     
     fragColor = vec4(col,1.0);
 }
